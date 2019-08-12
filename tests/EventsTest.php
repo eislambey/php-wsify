@@ -57,7 +57,7 @@ class EventsTest extends \PHPUnit\Framework\TestCase
         $events->onUnsubscribe($listener);
 
         $events->listen();
-        $this->assertSame(2, $counter,);
+        $this->assertSame(2, $counter);
     }
 
     public function testOnSubscribe()
