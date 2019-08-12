@@ -1,0 +1,28 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - wget -O wsify https://github.com/alash3al/wsify/releases/download/v2.3/wsify_linux_amd64
+  - chmod u+x wsify
+  - ./wsify -webhook "" &
+
+install:
+  - composer install -n --dev
+
+script:
+  - composer analyse
+  - composer test -- --coverage-clover=clover.xml
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
