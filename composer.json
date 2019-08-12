@@ -1,0 +1,33 @@
+{
+  "name": "eislambey/php-wsify",
+  "description": "PHP client for wsify",
+  "authors": [
+    {
+      "name": "Emre Can İslambey",
+      "email": "eislambey@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.1",
+    "phpstan/phpstan": "^0.11.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wsify\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "scripts": {
+    "test": "phpunit",
+    "analyse": "phpstan analyse src tests"
+  }
+}
