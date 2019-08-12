@@ -13,7 +13,7 @@ class PublisherTest extends TestCase
 
     public function setUp(): void
     {
-        $url = 'http://localhost:4040/publish';
+        $url = $_SERVER['WSIFY_PUBLISH_URL'] ?? 'http://localhost:4040/publish';
         $this->publisher = new \Wsify\Publisher($url);
     }
 
@@ -26,8 +26,8 @@ class PublisherTest extends TestCase
 
     public function testBadPublishUrl()
     {
-        $url = 'http://localhost:4040/publissh';
-        $publisher = new \Wsify\Publisher($url);
+        $url = $_SERVER['WSIFY_URL'] ?? 'http://localhost:4040/publish';
+        $publisher = new \Wsify\Publisher($url . uniqid());
 
         $channel = 'public';
         $payload = 'Example message';
