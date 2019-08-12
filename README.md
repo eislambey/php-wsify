@@ -10,7 +10,7 @@ PHP Client for [Wsify](https://github.com/alash3al/wsify) realtime messaging ser
 For more information please see official repo: https://github.com/alash3al/wsify
 
 ## Installation
-	composer require eislambey/php-wsify
+	composer require eislambey/wsify
 
 ## Examples
 
